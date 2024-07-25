@@ -1,0 +1,22 @@
+<div class="product">
+      <a [routerLink]="['/productDetails', item.id]">
+        <div>
+          <img [src]="item.image" class="w-100 img"/>
+          <h3>{{item.title}}</h3>
+          <p>{{item.description|minimize:20}}</p>
+        </div>
+      </a>
+      <div class="content d-flex justify-content-between">
+          <div class="add">
+             <button class="btn btn-success" *ngIf="!addButton" (click)="addButton = true"> Add To Cart </button>
+          </div>
+          <div class="d-flex w-50" *ngIf="addButton">
+             <input type="number" class="form-control" [(ngModel)]="amount" />
+             <button class="btn btn-danger" (click)="add()"> Add </button>
+          </div>
+          <div class="price p-2 rounded-2">
+             <span>{{item.price}} L.E</span>
+          </div>
+      </div>
+    
+</div>

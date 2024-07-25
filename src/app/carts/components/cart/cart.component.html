@@ -1,0 +1,74 @@
+<div class="cart">
+    <h4 class="text-danger"> Shopping Cart </h4>
+    <div class="d-flex justify-content-between">
+        <div class="items-number">
+           <p> You have <strong class="text-danger">{{cartProducts.length}}</strong> item in your cart </p>
+        </div>
+        <div class="clear">
+           <button class="btn btn-danger" (click)="clearAllProducts()"> Clear Shopping Cart </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-2">
+           <p> Name </p>
+        </div>
+        <div class="col-md-2">
+           <p> Price </p>
+        </div>
+        <div class="col-md-2">
+           <p> Quantity </p>
+        </div>
+        <div class="col-md-2">
+            <p> Total </p>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    
+    <div class="row" *ngFor="let cart of cartProducts; let index = index">
+        <div class="col-md-2">
+            <img [src]="cart.data.image"/>
+        </div>
+        <div class="col-md-2">
+            <h4> {{cart.data.title}} </h4>
+        </div>
+        <div class="col-md-2">
+            <p> {{cart.data.price}} </p>
+        </div>
+        <div class="col-md-2">
+            <div class="quantity d-flex"> 
+               <button class="btn btn-dark" (click)="bonus(index)"> + </button>
+               <input type="number" class="form-control text-center" [(ngModel)]="cart.quantity" (change)="detectChange()"/>
+               <button class="btn btn-dark" (click)="minus(index)"> - </button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <p> {{cart.data.price * cart.quantity}} </p>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-danger" (click)="deleteProduct(index)"> Delete </button>
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2 total-price">
+            <p> Total : {{totalPrice}} </p>
+        </div>
+        <div class="col-md-2 order-now">
+            <button class="btn btn-success" (click)="sendOrder()"> Order Now </button>
+        </div>
+        <div class="done w-50 bg-success mt-5" *ngIf="success">
+            <p>Order Well Done</p>
+        </div>
+    </div>
+</div>

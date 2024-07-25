@@ -1,0 +1,18 @@
+<div class="details py-5" *ngIf="!isLoading">
+    <div class="row gx-5">
+        <div class="col-md-3">
+            <img [src]="productDetails.image" class="w-100"/>
+        </div>
+        <div class="col-md-9">
+            <h2 class="py-2"> {{productDetails.title}} </h2>
+            <h5 class="py-2"> Category : {{productDetails.category}} </h5>
+            <h5 class="py-2"> Price : {{productDetails.price}} </h5>
+            <h5 class="py-2"> Rate : {{productDetails.rating.rate}} </h5>
+            <h5 class="py-2"> Count : {{productDetails.rating.count}} </h5>
+            <p class="py-2"> Description : {{productDetails.description}} </p>
+        </div>
+    </div>
+</div> 
+<div class="text-center w-100" *ngIf="isLoading">
+    <app-spinner ></app-spinner>
+</div>

@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/market",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "51c33e3e-e016-4a8d-90e6-488262a79f68"
   }
 }

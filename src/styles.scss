@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+// $fontColor: #fff;
+// $buttonColor: 
+// $priceColor:
+
+body
+{
+    font-family: cursive;
+}
+a,a:hover
+{
+    text-decoration: none;
+    color: black;
+}
+ul
+{
+    list-style: none;
+}
+li
+{
+    text-decoration: none;
+}
+img
+{
+    height: 100px;
+}
+h3
+{
+   height: 75px;
+   overflow: hidden;
+}
+
+.price
+{
+    background-color: #f1b4b4;
+}
